@@ -230,6 +230,5 @@ scripts/models
 scripts/test_data
 examples/
 examplesx/
-scripts/ru*.sh
 run_docker.sh
 test.py
