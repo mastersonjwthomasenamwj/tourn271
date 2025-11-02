@@ -16,14 +16,14 @@ def get_dpo_lr(model: str):
     hashed_model = hash_model(model)
     print(f"model_name: {model}", flush=True)
 
-    config_file = f"{os.path.join(current_dir, 'lrs')}/dpo_{model.split('/', 1)[1]}.json"
+    config_file = f"{os.path.join(current_dir, 'lrs')}/archives/dpo_{model.split('/', 1)[1]}.json"
     print(f"config_dpo1: {config_file}")
     if os.path.exists(config_file):
         print(f"Config: {config_file}")
         with open(config_file, "r") as f:
             dpo_lrs = json.load(f)
     else:
-        config_file = f"{os.path.join(current_dir, 'lrs')}/dpo_{model.split('/', 1)[0]}.json"
+        config_file = f"{os.path.join(current_dir, 'lrs')}/archives/dpo_{model.split('/', 1)[0]}.json"
         print(f"config_dpo0: {config_file}")
         if os.path.exists(config_file):
             print(f"Config: {config_file}")
@@ -37,7 +37,7 @@ def get_dpo_lr(model: str):
                 with open(config_file, "r") as f:
                     dpo_lrs = json.load(f)
 
-    ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_dpo_{model.split('/', 1)[1]}.json"
+    ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_dpo_{model.split('/', 1)[1]}.json"
     print(f"ratio_dpo1: {ratio_file}")
     if os.path.exists(ratio_file):
         print(f"Ratio: {ratio_file}")
@@ -45,7 +45,7 @@ def get_dpo_lr(model: str):
             ratio_lrs = json.load(f)
             scale_factor = ratio_lrs["ratio"]
     else:
-        ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_dpo_{model.split('/', 1)[0]}.json"
+        ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_dpo_{model.split('/', 1)[0]}.json"
         print(f"ratio_dpo0: {ratio_file}")
         if os.path.exists(ratio_file):
             print(f"Ratio: {ratio_file}")
@@ -76,14 +76,14 @@ def get_grpo_lr(model: str):
     hashed_model = hash_model(model)
     print(f"model_name: {model}", flush=True)
 
-    config_file = f"{os.path.join(current_dir, 'lrs')}/grpo_{model.split('/', 1)[1]}.json"
+    config_file = f"{os.path.join(current_dir, 'lrs')}/archives/grpo_{model.split('/', 1)[1]}.json"
     print(f"config_grpo1: {config_file}")
     if os.path.exists(config_file):
         print(f"Config: {config_file}")
         with open(config_file, "r") as f:
             grpo_lrs = json.load(f)
     else:
-        config_file = f"{os.path.join(current_dir, 'lrs')}/grpo_{model.split('/', 1)[0]}.json"
+        config_file = f"{os.path.join(current_dir, 'lrs')}/archives/grpo_{model.split('/', 1)[0]}.json"
         print(f"config_grpo0: {config_file}")
         if os.path.exists(config_file):
             print(f"Config: {config_file}")
@@ -97,7 +97,7 @@ def get_grpo_lr(model: str):
                 with open(config_file, "r") as f:
                     grpo_lrs = json.load(f)
 
-    ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_grpo_{model.split('/', 1)[1]}.json"
+    ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_grpo_{model.split('/', 1)[1]}.json"
     print(f"ratio_grpo1: {ratio_file}")
     if os.path.exists(ratio_file):
         print(f"Ratio: {ratio_file}")
@@ -105,7 +105,7 @@ def get_grpo_lr(model: str):
             ratio_lrs = json.load(f)
             scale_factor = ratio_lrs["ratio"]
     else:
-        ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_grpo_{model.split('/', 1)[0]}.json"
+        ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_grpo_{model.split('/', 1)[0]}.json"
         print(f"ratio_grpo0: {ratio_file}")
         if os.path.exists(ratio_file):
             print(f"Ratio: {ratio_file}")
@@ -136,14 +136,14 @@ def get_instruct_lr(model: str):
     hashed_model = hash_model(model)
     print(f"model_name: {model}", flush=True)
 
-    config_file = f"{os.path.join(current_dir, 'lrs')}/instruct_{model.split('/', 1)[1]}.json"
+    config_file = f"{os.path.join(current_dir, 'lrs')}/archives/instruct_{model.split('/', 1)[1]}.json"
     print(f"config_instruct1: {config_file}")
     if os.path.exists(config_file):
         print(f"Config: {config_file}")
         with open(config_file, "r") as f:
             instruct_lrs = json.load(f)
     else:
-        config_file = f"{os.path.join(current_dir, 'lrs')}/instruct_{model.split('/', 1)[0]}.json"
+        config_file = f"{os.path.join(current_dir, 'lrs')}/archives/instruct_{model.split('/', 1)[0]}.json"
         print(f"config_instruct0: {config_file}")
         if os.path.exists(config_file):
             print(f"Config: {config_file}")
@@ -157,7 +157,7 @@ def get_instruct_lr(model: str):
                 with open(config_file, "r") as f:
                     instruct_lrs = json.load(f)
 
-    ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_instruct_{model.split('/', 1)[1]}.json"
+    ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_instruct_{model.split('/', 1)[1]}.json"
     print(f"ratio_instruct1: {ratio_file}")
     if os.path.exists(ratio_file):
         print(f"Ratio: {ratio_file}")
@@ -165,7 +165,7 @@ def get_instruct_lr(model: str):
             ratio_lrs = json.load(f)
             scale_factor = ratio_lrs["ratio"]
     else:
-        ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_instruct_{model.split('/', 1)[0]}.json"
+        ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_instruct_{model.split('/', 1)[0]}.json"
         print(f"ratio_instruct0: {ratio_file}")
         if os.path.exists(ratio_file):
             print(f"Ratio: {ratio_file}")
@@ -196,14 +196,14 @@ def get_grpo_python_lr(model: str):
     hashed_model = hash_model(model)
     print(f"model_name: {model}", flush=True)
 
-    config_file = f"{os.path.join(current_dir, 'lrs')}/grpo_python_{model.split('/', 1)[1]}.json"
+    config_file = f"{os.path.join(current_dir, 'lrs')}/archives/grpo_python_{model.split('/', 1)[1]}.json"
     print(f"config_grpo_python1: {config_file}")
     if os.path.exists(config_file):
         print(f"Config: {config_file}")
         with open(config_file, "r") as f:
             grpo_python_lrs = json.load(f)
     else:
-        config_file = f"{os.path.join(current_dir, 'lrs')}/grpo_python_{model.split('/', 1)[0]}.json"
+        config_file = f"{os.path.join(current_dir, 'lrs')}/archives/grpo_python_{model.split('/', 1)[0]}.json"
         print(f"config_grpo_python0: {config_file}")
         if os.path.exists(config_file):
             print(f"Config: {config_file}")
@@ -217,7 +217,7 @@ def get_grpo_python_lr(model: str):
                 with open(config_file, "r") as f:
                     grpo_python_lrs = json.load(f)
 
-    ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_grpo_python_{model.split('/', 1)[1]}.json"
+    ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_grpo_python_{model.split('/', 1)[1]}.json"
     print(f"ratio_grpo_python1: {ratio_file}")
     if os.path.exists(ratio_file):
         print(f"Ratio: {ratio_file}")
@@ -225,7 +225,7 @@ def get_grpo_python_lr(model: str):
             ratio_lrs = json.load(f)
             scale_factor = ratio_lrs["ratio"]
     else:
-        ratio_file = f"{os.path.join(current_dir, 'lrs')}/ratio_grpo_python_{model.split('/', 1)[0]}.json"
+        ratio_file = f"{os.path.join(current_dir, 'lrs')}/archives/ratio_grpo_python_{model.split('/', 1)[0]}.json"
         print(f"ratio_grpo_python0: {ratio_file}")
         if os.path.exists(ratio_file):
             print(f"Ratio: {ratio_file}")
