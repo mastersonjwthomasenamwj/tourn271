@@ -42,7 +42,7 @@ from transformers import AutoConfig
 
 
 def run_cmd_with_log(cmd: str, log_file_path: str, env_vars: dict = None):
-    print(f"Running command: {cmd}", flush=True)
+    # print(f"Running command: {cmd}", flush=True)
     with open(log_file_path, "w") as log_file:
         # Prepare environment variables
         process_env = os.environ.copy()
@@ -300,7 +300,6 @@ def main():
         "dataset_type": dataset_type_dict,
         "submission_dir": submission_dir,
         "output_dir": output_dir,
-        "min_steps": 100,
         "adjust_batch_size": True,
         "request_path": request_path,
         "max_data_size": args.max_data_size,
@@ -366,7 +365,7 @@ def main():
                             "per_device_train_batch_size",
                             str(new_batch_size),
                         )
-                        print(f"New train command: {train_cmd}", flush=True)
+                        # print(f"New train command: {train_cmd}", flush=True)
                     else:
                         print(f"batch size is 1, cannot reduce further", flush=True)
                         if args.task_type == TaskType.GRPOTASK.value:
@@ -374,7 +373,7 @@ def main():
                             train_cmd = replace_args_in_cmd(
                                 train_cmd, "use_vllm", "False"
                             )
-                            print(f"disable VLLM {train_cmd}", flush=True)
+                            # print(f"disable VLLM {train_cmd}", flush=True)
                 elif error_type == VLLM_OOM_ERROR:
                     if args.task_type == TaskType.GRPOTASK.value:
                         print(f"VLLM OOM error, disable VLLM", flush=True)
@@ -411,7 +410,7 @@ def main():
             add_noise_cmd, os.path.join(ds_folder, f"add_noise_{args.task_id}.log")
         )
     
-    patch_model_metadata(output_dir, args.model)
+    #patch_model_metadata(output_dir, args.model)
 
     patch_wandb_symlinks(train_cst.WANDB_LOGS_DIR)
 

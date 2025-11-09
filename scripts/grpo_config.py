@@ -9,7 +9,7 @@ from model_utility import (
 )
 from copy import deepcopy
 from lrs_lookup import get_grpo_lr, get_grpo_python_lr
-allow_find_lk_lr = True
+allow_find_lk_lr = False
 
 GRPO_CONFIG = {
     "0_1_b": {
@@ -287,7 +287,7 @@ def get_training_json(train_info: dict) -> dict:
     train_request["save_before_remaining_time"] = 3
     train_request["min_steps"] = 100
     train_request["adjust_batch_size"] = False
-    train_request["periodic_save_steps"] = 400
+    train_request["periodic_save_steps"] = 500
 
     if if_contain_slow_reward_function(train_info["dataset_type"]):
         train_request["save_before_remaining_time"] = 12

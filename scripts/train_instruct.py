@@ -194,7 +194,7 @@ def main():
     (training_args, lora_args) = argument_parser.parse_args_into_dataclasses()
     train_info = json.load(open(training_args.request_path, "r"))
     train_request = train_info["train_request"]
-    log_info(f"Training request: {train_request}", "start")
+    # log_info(f"Training request: {train_request}", "start")
     task_id = train_request["task_id"]
 
     tokenizer = AutoTokenizer.from_pretrained(train_request["model_path"])

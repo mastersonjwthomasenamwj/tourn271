@@ -138,7 +138,7 @@ def main():
     #     log_info("WANDB_API_KEY is provided, we will report to wandb")
     #     training_args.report_to = "wandb"
 
-    log_info(f"Training request: {train_request}", "start")
+    # log_info(f"Training request: {train_request}", "start")
     # first download the dataset from the URL, save it as data.json
     output_dir = training_args.output_dir
     tokenizer = AutoTokenizer.from_pretrained(train_request["model_path"])
